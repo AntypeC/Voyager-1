@@ -10,10 +10,55 @@
 </head>
 <body>
     <script type="module" src="script.js"></script>
+    <div class="title">Voyager 1</div>
+    <ol id="stats" type="i">
+        <li>Launched date: September 5, 1977</li>
+        <li>Distance from Earth: 23,823,119,199 kilometers</li>
+        <li>Mass: 722 kilograms (1,590 pounds)</li>
+        <li>Power source: Three RTGs</li>
+        <li>Propulsion: One main engine and four small attitude control thrusters</li>
+        <li>Data transmission rate: 160 bits per second</li>
+    </ol>
 </body>
 <style>
     body{
         margin: 0;
+        background-image: url('space.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:cover;
+    }
+    #stats{
+        width: 20vw;
+        height: 30vh;
+        background-color: rgb(36, 43, 52);
+        position: absolute;
+        top: 35vh;
+        right: 0;
+        /* border-radius: 15px; */
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-style: solid;
+        border-color: rgb(90, 97, 105);
+        border-right-width: 0;
+        color: white;
+        font-size: 1.5vw;
+    }
+    #title{
+        width: 40vw;
+        height: 20vh;
+        background-color: rgb(36, 43, 52);
+        position: absolute;
+        top: 35vh;
+        right: 0;
+        /* border-radius: 15px; */
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-style: solid;
+        border-color: rgb(90, 97, 105);
+        border-right-width: 0;
+        color: white;
+        font-size: 1.5vw;
     }
 </style>
 </html>

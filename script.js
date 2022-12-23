@@ -1,8 +1,9 @@
 import * as THREE from './three.module.js'
-import {GLTFLoader} from "./gltfloader.js"
+import {GLTFLoader} from "./GLTFLoader.js"
 import {OrbitControls} from "./OrbitControls.js"
 
 var scene = new THREE.Scene();
+var probe = undefined
 
 var camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 1, 5000);
 camera.rotation.y = 45/180*Math.PI;
@@ -13,6 +14,19 @@ camera.position.z = 1000;
 var renderer = new THREE.WebGLRenderer({antialias: true})
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+
+renderer.setClearColor(0x000000, 0);
+
+window.addEventListener( 'resize', onWindowResize, false );
+
+function onWindowResize(){
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+}
 
 var hlight = new THREE.AmbientLight (0x404040, 2);
 scene.add(hlight);
@@ -40,16 +54,21 @@ scene.add(light4);
 
 let loader = new GLTFLoader();
 loader.load('voyager_1/scene.gltf', function(gltf) {
-    var car = gltf.scene;
-    car.scale.set(50, 50, 50);
-    scene.add(car);
+    probe = gltf.scene;
+    probe.scale.set(70, 70, 70);
+    scene.add(probe);
     animate()
 });
 
 let controls = new OrbitControls( camera, renderer.domElement );
 controls.addEventListener('change', renderer);
 
+
 function animate() {
     renderer.render(scene, camera);
+    if (probe!=undefined) {
+        probe.rotation.y += 0.001;
+    }
+
     requestAnimationFrame(animate);
 }
