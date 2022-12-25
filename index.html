@@ -9,9 +9,13 @@
     <title>Document</title>
 </head>
 <body>
+    <audio src="./audio.mp3" controls autoplay loop></audio>
     <script type="module" src="script.js"></script>
-    <div class="title">Voyager 1</div>
+    <div id="title">
+        <h1>Voyager 1</h1>
+    </div>
     <ol id="stats" type="i">
+        <h3>Quick Info</h3>
         <li>Launched date: September 5, 1977</li>
         <li>Distance from Earth: 23,823,119,199 kilometers</li>
         <li>Mass: 722 kilograms (1,590 pounds)</li>
@@ -30,7 +34,7 @@
     }
     #stats{
         width: 20vw;
-        height: 30vh;
+        height: 35vh;
         background-color: rgb(36, 43, 52);
         position: absolute;
         top: 35vh;
@@ -42,23 +46,25 @@
         border-color: rgb(90, 97, 105);
         border-right-width: 0;
         color: white;
-        font-size: 1.5vw;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
     }
     #title{
-        width: 40vw;
-        height: 20vh;
+        text-align: center;
+        width: 25vw;
+        height: 5vw;
         background-color: rgb(36, 43, 52);
         position: absolute;
-        top: 35vh;
-        right: 0;
-        /* border-radius: 15px; */
-        border-top-left-radius: 15px;
+        right: 40vw;
+        top: 0;
         border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
         border-style: solid;
         border-color: rgb(90, 97, 105);
-        border-right-width: 0;
+        border-top-width: 0;
         color: white;
-        font-size: 1.5vw;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
     }
 </style>
 </html>
